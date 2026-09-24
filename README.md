@@ -1,0 +1,50 @@
+# Python Programming Exercises
+
+A collection of Python scripts solving various programming challenges, mathematical puzzles, data structure manipulation, and utility operations.
+
+## Exercises List
+
+Here is a list of all the scripts included in this repository along with a brief description of their functionality:
+
+| File Name | Description |
+| :--- | :--- |
+| [`P-1_AdditionOfMatrix.py`](file:///c:/Piyush/Python/P-1_AdditionOfMatrix.py) | Adds two matrices and prints the result. |
+| [`P-2_CountVowelInString.py`](file:///c:/Piyush/Python/P-2_CountVowelInString.py) | Counts the number of vowels in a given string. |
+| [`P-3_CleanUpANestedDictionary.py`](file:///c:/Piyush/Python/P-3_CleanUpANestedDictionary.py) | Cleans up and standardizes a nested dictionary. |
+| [`P-4_CombineTwoLists_GivesDict.py`](file:///c:/Piyush/Python/P-4_CombineTwoLists_GivesDict.py) | Combines two lists to create a single dictionary. |
+| [`P-5_Dates.py`](file:///c:/Piyush/Python/P-5_Dates.py) | Checks if a third date falls chronologically between two other dates. |
+| [`P-6_FrequencyOfEachWordWithinTheSentence.py`](file:///c:/Piyush/Python/P-6_FrequencyOfEachWordWithinTheSentence.py) | Computes the frequency of each word in a given sentence. |
+| [`P-7_FibonacciSeriesUsingListComprehension.py`](file:///c:/Piyush/Python/P-7_FibonacciSeriesUsingListComprehension.py) | Generates the Fibonacci series using list comprehensions. |
+| [`P-8_OddIndisesElementInList.py`](file:///c:/Piyush/Python/P-8_OddIndisesElementInList.py) | Extracts elements from odd indices in a list. |
+| [`P-9_MathPuzzleChickensAndRabbits.py`](file:///c:/Piyush/Python/P-9_MathPuzzleChickensAndRabbits.py) | Solves the classic chickens and rabbits mathematical puzzle. |
+| [`P-10_Bank_Balance_Calculater_Using_Logs.py`](file:///c:/Piyush/Python/P-10_Bank_Balance_Calculater_Using_Logs.py) | Calculates net bank balance from transaction logs. |
+| [`P-11_spinner animation.py`](file:///c:/Piyush/Python/P-11_spinner%20animation.py) | Implements a simple terminal loading spinner animation. |
+| [`P-12_sort_a_dictionary_of_dictionaries.py`](file:///c:/Piyush/Python/P-12_sort_a_dictionary_of_dictionaries.py) | Sorts a dictionary of dictionaries by inner values. |
+| [`P-13_valid_consecutive_number_sequence.py`](file:///c:/Piyush/Python/P-13_valid_consecutive_number_sequence.py) | Checks if a sequence of numbers is consecutively valid. |
+| [`P-14_Regular_Expressions_to_extract_a_specific_block_of_text.py`](file:///c:/Piyush/Python/P-14_Regular_Expressions_to_extract_a_specific_block_of_text.py) | Uses regex to extract specific text blocks. |
+| [`P-15_Filtter_function_for_odd_number.py`](file:///c:/Piyush/Python/P-15_Filtter_function_for_odd_number.py) | Uses a filter function to extract odd numbers. |
+| [`P-16_multiplication_of_3_matrix.py`](file:///c:/Piyush/Python/P-16_multiplication_of_3_matrix.py) | Performs multiplication across three matrices. |
+| [`P-17_Sorting_words_of_a_sentence.py`](file:///c:/Piyush/Python/P-17_Sorting_words_of_a_sentence.py) | Sorts the words of a sentence alphabetically. |
+| [`P-18_Maths_oprations_on_List.py`](file:///c:/Piyush/Python/P-18_Maths_oprations_on_List.py) | Performs various mathematical operations on list items. |
+| [`P-19_oldest_and_the_youngest_person.py`](file:///c:/Piyush/Python/P-19_oldest_and_the_youngest_person.py) | Identifies the oldest and youngest persons from a dataset. |
+| [`P-20_Adding_lastChar_at_start_and_end_of_str.py`](file:///c:/Piyush/Python/P-20_Adding_lastChar_at_start_and_end_of_str.py) | Adds the last character of a string to its start and end. |
+| [`P-21_character_frequency_using_recursion.py`](file:///c:/Piyush/Python/P-21_character_frequency_using_recursion.py) | Recursively calculates the frequency of characters. |
+| [`P-22_closest_pair_of_numbers.py`](file:///c:/Piyush/Python/P-22_closest_pair_of_numbers.py) | Finds the closest pair of numbers in a dataset. |
+| [`P-23_display_month_and_year_calendar.py`](file:///c:/Piyush/Python/P-23_display_month_and_year_calendar.py) | Displays the calendar for a specific month and year. |
+| [`P-24_binary_oprations.py`](file:///c:/Piyush/Python/P-24_binary_oprations.py) | Performs operations on binary representations. |
+| [`P-25_count_no_of_upper_and_lowercase_letter.py`](file:///c:/Piyush/Python/P-25_count_no_of_upper_and_lowercase_letter.py) | Counts uppercase and lowercase letters in a string. |
+| [`P-26_print_$N+NN+NNN+NNNN$.py`](file:///c:/Piyush/Python/P-26_print_%24N%2BNN%2BNNN%2BNNNN%24.py) | Computes the value of $N+NN+NNN+NNNN$ for a digit $N$. |
+| [`P-27_squre_of_the_number_list_comprehension.py`](file:///c:/Piyush/Python/P-27_squre_of_the_number_list_comprehension.py) | Computes the squares of numbers in a list using list comprehension. |
+| [`P-28_function_to_calculate_the_net_bank_balance.py`](file:///c:/Piyush/Python/P-28_function_to_calculate_the_net_bank_balance.py) | A utility function to compute net transaction balance. |
+
+## Running the Scripts
+
+To run any script:
+
+1. Ensure you have Python installed (version 3.x is recommended).
+2. Open a terminal/command prompt.
+3. Run the script using Python:
+
+   ```bash
+   python P-1_AdditionOfMatrix.py
+   ```
