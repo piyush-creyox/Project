@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_department_department_form" model="ir.ui.view">
+        <field name="name">Form view Department Table (Model)</field>
+        <field name="model">department.department</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+
+                        <button name="action_view_students"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-users">
+
+                            <field name="no_of_students"
+                                   string="Total Students"
+                                   widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="no_of_students"/>
+                            <field name="staff_ids" widget="many2many_tags"/>
+                            <field name="hod_id" widget="many2one_avatar_user"/>
+                        </group>
+                        <group>
+                            <field name="notes"/>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                        <notebook>
+                            <page string="student_ids">
+                                <field name="student_ids"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="view_department_department_list" model="ir.ui.view">
+        <field name="name">List view Department Table (Model)</field>
+        <field name="model">department.department</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="no_of_students"/>
+                <field name="staff_ids"/>
+                <field name="hod_id"/>
+                <field name="student_ids"/>
+                <field name="notes"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_department_department_kanban" model="ir.ui.view">
+        <field name="name">List view Department Table (Model)</field>
+        <field name="model">department.department</field>
+        <field name="arch" type="xml">
+            <kanban class="department_view_kanban">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="notes"/>
+                <field name="active"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="notes"/>
+                                <field name="active"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="view_department_department_activity" model="ir.ui.view">
+        <field name="name">Activity view Department Table (Model)</field>
+        <field name="model">department.department</field>
+        <field name="arch" type="xml">
+            <activity string="Contracts">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="notes"/>
+                <templates>
+                    <div t-name="activity-box">
+                        <div class="ms-2">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="notes"/>
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+
+    <record id="view_department_department_pivot" model="ir.ui.view">
+        <field name="name">Pivot view Department Table (Model)</field>
+        <field name="model">department.department</field>
+        <field name="arch" type="xml">
+            <pivot string="Activities Analysis" sample="1">
+                <field name="no_of_students" type="col"/>
+                <field name="name" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_department_department_graph" model="ir.ui.view">
+        <field name="name">Graph view Department Table (Model)</field>
+        <field name="model">department.department</field>
+        <field name="arch" type="xml">
+            <graph string="Invoices Analysis" type="line" sample="0">
+                <field name="name"/>
+                <field name="no_of_students" type="measure"/>
+            </graph>
+        </field>
+    </record>
+    <record id="department_conf_form" model="ir.ui.view">
+        <field name="name">Form view Department_conf Table (Model)</field>
+        <field name="model">department.conf</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="type"/>
+                        <field name="department_id" invisible="type!='write'" required="type == 'write'"/>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <button name="process_method_create" type="object" string="Process" class="btn-primary"
+                                invisible="type!='create'"/>
+                        <button name="process_method_write" type="object" string="Process" class="btn-primary"
+                                invisible="type!='write'"/>
+                        <button special="cancel" string="Cancel" class="btn-primary"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_tiktok_quotations" model="ir.actions.act_window">
+        <field name="name">Department</field>
+        <field name="res_model">department.department</field>
+        <field name="view_mode">list,form,kanban,activity,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No TikTok quotations found!
+            </p>
+            <p>
+                Quotations from TikTok Shop will appear here.
+            </p>
+        </field>
+    </record>
+    <record id="action_department_conf" model="ir.actions.act_window">
+        <field name="name">Department Configuration</field>
+        <field name="res_model">department.conf</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No TikTok quotations found!
+            </p>
+            <p>
+                Quotations from TikTok Shop will appear here.
+            </p>
+        </field>
+    </record>
+
+
+    <!-- ========================================== -->
+    <menuitem id="menu_department_management"
+              name="Department"/>
+    <menuitem id="menu_department_department"
+              name="Department" parent="menu_department_management" sequence="2" action="action_tiktok_quotations"
+              groups="cr_department_management.group_department_user"/>
+    <menuitem id="department_conf"
+              name="Department Configuration" parent="menu_department_management" sequence="3"
+              action="action_department_conf" groups="cr_department_management.group_department_user"/>
+
+
+</odoo>

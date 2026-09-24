@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_employee_form" model="ir.ui.view">
+        <field name="name">Form view Employee Table (Model)</field>
+        <field name="model">employee.employee</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="image" widget="image"/>
+                        <field name="street"/>
+                        <field name="city"/>
+                        <field name="zip"/>
+                        <field name="state_id"/>
+                        <field name="country_id"/>
+                        <field name="birthdate" placeholder="Enter your Birthdate in the formate MM/DD/YYYY"/>
+                        <field name="age"/>
+                        <field name="mobile" widget="phone"/>
+                        <field name="email" widget="email" placeholder="Enter your work email..."/>
+                        <field name="barcode"/>
+                        <field name="job_time"/>
+                        <field name="notes"/>
+                        <field name="remarks"/>
+                        <field name="is_hod" widget="boolean_toggle"/>
+                        <field name="active" widget="boolean_button"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="view_employee_employee_list" model="ir.ui.view">
+        <field name="name">List view Employee Table (Model)</field>
+        <field name="model">employee.employee</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="image" widget="image"/>
+                <field name="street"/>
+                <field name="city"/>
+                <field name="zip"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                <field name="birthdate"/>
+                <field name="age"/>
+                <field name="mobile" widget="phone"/>
+                <field name="email" widget="email"/>
+                <field name="barcode"/>
+                <field name="job_time"/>
+                <field name="notes"/>
+                <field name="remarks"/>
+                <field name="is_hod" widget="boolean_toggle"/>
+                <field name="active" widget="boolean_button"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_employee_employee_kanban" model="ir.ui.view">
+        <field name="name">List view Employee Table (Model)</field>
+        <field name="model">employee.employee</field>
+        <field name="arch" type="xml">
+            <kanban class="employee_view_kanban">
+                <field name="name"/>
+                <field name="street"/>
+                <field name="notes"/>
+                <field name="active"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <field name="name"/>
+                                <field name="street"/>
+                                <field name="notes"/>
+                                <field name="active"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_employee_employee_activity" model="ir.ui.view">
+            <field name="name">employee.employee.activity</field>
+            <field name="model">employee.employee</field>
+            <field name="arch" type="xml">
+                <activity string="Contracts">
+                    <field name="name"/>
+                    <field name="street"/>
+                    <field name="notes"/>
+                    <templates>
+                        <div t-name="activity-box">
+                            <div class="ms-2">
+                                <field name="name"/>
+                                <field name="street"/>
+                                <field name="notes"/>
+                            </div>
+                        </div>
+                    </templates>
+                </activity>
+            </field>
+    </record>
+
+    <record id="view_employee_employee_pivot" model="ir.ui.view">
+            <field name="name">Pivot view Employee Table (Model)</field>
+            <field name="model">employee.employee</field>
+            <field name="arch" type="xml">
+                <pivot string="Activities Analysis" sample="1">
+                    <field name="age" type="col"/>
+                    <field name="name"  type="row"/>
+                </pivot>
+            </field>
+    </record>
+
+
+    <record id="view_employee_employee_graph" model="ir.ui.view">
+         <field name="name">Graph view Employee Table (Model)</field>
+         <field name="model">employee.employee</field>
+         <field name="arch" type="xml">
+             <graph string="Invoices Analysis" type="line" sample="0">
+                 <field name="name"/>
+                 <field name="city"/>
+             </graph>
+         </field>
+    </record>
+
+     <!-- Action -->
+    <record id="action_employee" model="ir.actions.act_window">
+        <field name="name">Employee</field>
+        <field name="res_model">employee.employee</field>
+        <field name="view_mode">list,form,kanban,activity,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No TikTok quotations found!
+            </p>
+            <p>
+                Quotations from TikTok Shop will appear here.
+            </p>
+        </field>
+    </record>
+
+
+<!-- ========================================== -->
+
+    <menuitem id="menu_employee_employee"
+              name="Employee" parent = "menu_department_management" sequence="4" action="action_employee" groups="cr_department_management.group_employee_user"/>
+
+
+</odoo>

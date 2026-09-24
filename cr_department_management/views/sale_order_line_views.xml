@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!-- Add Split field to Sale Order Line -->
+    <record id="sale_order_line_in" model="ir.ui.view">
+        <field name="name">sale.order.line.in</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/list/field[@name='name']"
+                   position="after">
+
+                <field name="split"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- Split Server Action -->
+    <record id="split_sale_wiz_server_action" model="ir.actions.server">
+        <field name="name">Split</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+
+        <field name="code">
+            action = {
+                'type': 'ir.actions.act_window',
+                'res_model': 'split.sale.wiz',
+                'view_mode': 'form',
+                'target': 'new',
+                'context': {}
+            }
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_department_department_user,department.department.user,model_department_department,cr_department_management.group_department_user,1,1,1,1
+access_employee_employee_user,employee.employee.user,model_employee_employee,cr_department_management.group_employee_user,1,1,1,1
+access_student_student_user,student_student.user,model_student_student,cr_department_management.group_student_user,1,1,1,1
+access_department_conf_user,department_conf.user,model_department_conf,cr_department_management.group_department_user,1,1,1,1
+access_split_sale_wiz_user,split.sale.wiz.user,model_split_sale_wiz,,1,1,1,1
